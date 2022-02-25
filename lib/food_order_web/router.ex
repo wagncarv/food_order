@@ -41,6 +41,7 @@ defmodule FoodOrderWeb.Router do
 
       live_dashboard "/dashboard", metrics: FoodOrderWeb.Telemetry
     end
+
     # coveralls-ignore-stop
   end
 
