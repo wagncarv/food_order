@@ -25,6 +25,7 @@ defmodule FoodOrderWeb.Router do
   #   pipe_through :api
   # end
 
+  # coveralls-ignore-start
   # Enables LiveDashboard only for development
   #
   # If you want to use the LiveDashboard in production, you should put
@@ -40,6 +41,7 @@ defmodule FoodOrderWeb.Router do
 
       live_dashboard "/dashboard", metrics: FoodOrderWeb.Telemetry
     end
+    # coveralls-ignore-stop
   end
 
   # Enables the Swoosh mailbox preview in development.
