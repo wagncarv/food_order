@@ -1,7 +1,9 @@
 defmodule FoodOrderWeb.MainLive do
   use FoodOrderWeb, :live_view
+  alias FoodOrderWeb.Main.Hero
+  alias FoodOrderWeb.Main.Items
 
   def mount(_assigns, _session, socket) do
-    {:ok, socket |> assign(name: "Wagner", age: 39)}
+    {:ok, socket}
   end
 end
