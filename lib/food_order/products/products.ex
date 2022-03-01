@@ -9,5 +9,4 @@ defmodule FoodOrder.Products do
     |> Product.changeset()
     |> Repo.insert()
   end
-
 end

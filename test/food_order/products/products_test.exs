@@ -11,7 +11,7 @@ defmodule FoodOrder.ProductsTest do
 
   describe "create_product/1" do
     test "When all params are correct, creates a new product" do
-      payload =  %{name: "Pizza Napolitana", price: 87, size: "35", description: "New product"}
+      payload = %{name: "Pizza Napolitana", price: 87, size: "35", description: "New product"}
       assert {:ok, %Product{} = product} = Products.create_product(payload)
       assert product.description == payload.description
       assert product.name == payload.name
@@ -19,5 +19,4 @@ defmodule FoodOrder.ProductsTest do
       assert product.size == payload.size
     end
   end
-
 end
