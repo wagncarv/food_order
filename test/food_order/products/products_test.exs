@@ -18,5 +18,13 @@ defmodule FoodOrder.ProductsTest do
       assert product.price == payload.price
       assert product.size == payload.size
     end
+
+    test "Given a product with the same name, it must throw an error" do
+      payload = %{name: "Pizza Napolitana", price: 87, size: "35", description: "New product"}
+      assert {:ok, %Product{} = _product} = Products.create_product(payload)
+      assert {:error, _changeset} = Products.create_product(payload)
+
+
+    end
   end
 end
