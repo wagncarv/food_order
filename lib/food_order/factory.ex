@@ -1,6 +1,7 @@
 defmodule FoodOrder.Factory do
   use ExMachina.Ecto, repo: FoodOrder.Repo
   alias FoodOrder.Products.Product
+
   def product_factory do
     %Product{
       description: Faker.Food.description(),
