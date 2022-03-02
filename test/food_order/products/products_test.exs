@@ -22,9 +22,9 @@ defmodule FoodOrder.ProductsTest do
     test "Given a product with the same name, it must throw an error" do
       payload = %{name: "Pizza Napolitana", price: 87, size: "35", description: "New product"}
       assert {:ok, %Product{} = _product} = Products.create_product(payload)
-      assert {:error, _changeset} = Products.create_product(payload)
-
-
+      assert {:error, changeset} = Products.create_product(payload)
+      assert "has already been taken" in errors_on(changeset).name
+      assert %{name: ["has already been taken"]} = errors_on(changeset)
     end
   end
 end
