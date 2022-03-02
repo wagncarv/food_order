@@ -1,6 +1,6 @@
 <div class="lg:w-64 shadow-lg rounded-lg p-4 mb-2" id={@id}>
 
-    <img src="" alt="" class="h-40 mb-4 mx-auto" data-role="product-image" data-id={@id}>
+    <img src={ FoodOrderWeb.Router.Helpers.static_path(@socket, "/images/food.svg") } alt="" class="h-40 mb-4 mx-auto" data-role="product-image" data-id={@id}>
 
     <div class="text-center" data-role="product-description">
         <h2 class="mb-4 text-lg" data-role="product-name" data-id={@id}>
