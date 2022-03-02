@@ -3,8 +3,7 @@
         "lib/food_order/application.ex",
         "lib/food_order_web.ex",
         "lib/food_order_web/views/error_helpers",
-        "test/support/data_case.ex",
-        "test/support/channel_case.ex",
+        "test/support/*",
         "lib/food_order_web/telemetry.ex",
         "lib/food_order_web/router.ex"
     ],
