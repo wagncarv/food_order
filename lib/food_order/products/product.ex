@@ -16,12 +16,13 @@ defmodule FoodOrder.Products.Product do
     timestamps()
   end
 
-  def changeset(attrs), do: changeset(%__MODULE__{}, attrs)
+  def changeset(attrs \\ %{}), do: changeset(%__MODULE__{}, attrs)
 
   def changeset(product, attrs) do
     product
     |> cast(attrs, @fields ++ @required_fields)
     |> validate_required(@required_fields)
+    |> validate_length(:name, min: 2)
     |> unique_constraint([:name])
   end
 end
