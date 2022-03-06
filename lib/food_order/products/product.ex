@@ -22,6 +22,7 @@ defmodule FoodOrder.Products.Product do
     product
     |> cast(attrs, @fields ++ @required_fields)
     |> validate_required(@required_fields)
+    |> validate_length(:name, min: 2)
     |> unique_constraint([:name])
   end
 end
