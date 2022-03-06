@@ -4,7 +4,6 @@ defmodule FoodOrderWeb.Admin.Products.Form do
   alias FoodOrder.Products.Product
 
   def update(assigns, socket) do
-    IO.inspect(assigns)
     changeset = Products.change_product()
 
     {:ok,
@@ -15,8 +14,6 @@ defmodule FoodOrderWeb.Admin.Products.Form do
   end
 
   def handle_event("validate", %{"product" => product_params}, socket) do
-    IO.inspect(product_params)
-
     changeset =
       socket.assigns.product
       |> Products.change_product(product_params)
