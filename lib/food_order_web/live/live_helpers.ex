@@ -26,7 +26,6 @@ defmodule FoodOrderWeb.LiveHelpers do
   end
 
   defp hide_modal(js \\ %JS{}) do
-    IO.inspect(js)
     js
     |> JS.hide(to: "#modal", transition: "fade-out")
     |> JS.hide(to: "#modal-content", transition: "fade-out-scale")

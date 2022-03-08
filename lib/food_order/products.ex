@@ -10,6 +10,21 @@ defmodule FoodOrder.Products do
     |> Repo.insert()
   end
 
-  def change_product(product, params), do: Product.changeset(product, params)
-  def change_product, do: Product.changeset()
+  def update_product(product, attrs) do
+    product
+    |> Product.changeset(attrs)
+    |> Repo.update()
+  end
+
+  @spec change_product(
+          {map, map}
+          | %{
+              :__struct__ => atom | %{:__changeset__ => map, optional(any) => any},
+              optional(atom) => any
+            },
+          :invalid | %{optional(:__struct__) => none, optional(atom | binary) => any}
+        ) :: Ecto.Changeset.t()
+  def change_product(product, params \\ %{}), do: Product.changeset(product, params)
+
+  def get!(id), do: Repo.get!(Product, id)
 end
